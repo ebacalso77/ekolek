@@ -82,7 +82,7 @@ include "../connection.php";
             var options = {
                 title: 'Collection Satisfaction Ratings ',
                 colors: ['#FF0000', '#FF9900', '#ffef2c', '#99FF00', '#00FF00'], // Set colors for each satisfaction level
-                pieHole: 0.4, // Set pie hole to create a donut chart
+                // pieHole: 0.4, // Set pie hole to create a donut chart
             };
 
             // Instantiate and draw the chart.
@@ -256,12 +256,12 @@ GROUP BY baranggay.b_name, baranggay.b_id;";
             var data = google.visualization.arrayToDataTable(<?php echo json_encode($chartData); ?>);
 
             // Define custom colors for each barangay
-            var colors = ['#3a33ff', '#33FF57', '#5733FF', '#FF33E1', '#33E1FF', '#E1FF33'];
+            var colors = ['#ffa16e', '#33FF57', '#5733FF', '#FF33E1', '#33E1FF', '#E1FF33'];
 
             var options = {
                 title: 'Collection Percentage by Barangay',
                 legend: 'none',
-                chartArea: {width: '80%'},
+                chartArea: {width: '70%'},
                 hAxis: {
                     title: 'Percentage',
                     minValue: 0,
@@ -373,7 +373,7 @@ LIMIT 5;");
   
         var options = {
                 title: 'Complaint Status Distribution',
-                pieHole: 0.4, // Create a donut hole in the center
+                // pieHole: 0.4, // Create a donut hole in the center
                 legend: { position: 'bottom' }
             };
   
