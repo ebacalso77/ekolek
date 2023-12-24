@@ -1,3 +1,3 @@
-# E-Kolek
-This system is all about the Waste Management System for Local Government Unit of Pakil, laguna.
+# E-Kolek Management System
+This system is aligned with the waste management efforts of a municipality. The functions incorporated within this system encompass descriptive analytics, service management, complaint management, comment consolidation, notification, and bulletin board synchronization.
 
