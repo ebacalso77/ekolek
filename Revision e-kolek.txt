@@ -1,0 +1,23 @@
+Revision Need to Address
+---------------------------
+1. Dashboard enhancedment.
+2. Common brgy PIE Chart, pag clinik lalabas yung mga common complaints.
+3. Confirmation need to address (btn Collected at Not Collected) address at timestamp ( collector and admin ). with rating using level of statisfaction 1-5 and graph 
+4. Citizen Charter remain the garbage collection with Update functionality in admin //DONE
+Deadline Deliveration : Dec 21, 2023
+Amount : 4400
+Downpayment : dated 12/13/2024 1800
+Remaining: 2600
+ 
+Additional part
+> need to make a selection of barangay in complaint and a textbox that input the sitio //DONE
+> the complaint must be seen by collector whose barangay the collector is register corresponding the brgy that complaint //DONE
+> seen also by the admin //DONE
+additional amount 600
+
+Overall total: 4400 + 600 = 5k
+less downpayment: 5k-1800 = 3200
+
+
+//Tawad 
+Rename the User to resident in the index.php //DONE
