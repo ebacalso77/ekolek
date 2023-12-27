@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 06:58 AM
+-- Generation Time: Dec 24, 2023 at 09:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -309,6 +309,38 @@ INSERT INTO `tbl_collection_completion_report` (`ccr_id`, `ccr_user_id`, `ccr_to
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_collection_ratings`
+--
+
+CREATE TABLE `tbl_collection_ratings` (
+  `cr_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `cr_sitio` varchar(255) NOT NULL,
+  `brgy` int(11) NOT NULL,
+  `cr_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(255) NOT NULL,
+  `ratings` int(11) NOT NULL COMMENT '1-Not at all satisfied\r\n2-slightly satisfied\r\n3-moderately satisfied\r\n4-Very satisfied\r\n5-Extremely satisfied'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_collection_ratings`
+--
+
+INSERT INTO `tbl_collection_ratings` (`cr_id`, `user_id`, `cr_sitio`, `brgy`, `cr_timestamp`, `status`, `ratings`) VALUES
+(6, 71, 'Sitio 1', 5, '2023-12-23 10:54:29', 'collected', 4),
+(7, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'collected', 3),
+(8, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 3),
+(9, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 1),
+(10, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 2),
+(11, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 5),
+(12, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 5),
+(13, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 5),
+(14, 71, 'Sitio 1', 5, '2023-12-23 10:54:29', 'collected', 4),
+(15, 71, 'Sitio 2', 5, '2023-12-23 10:55:01', 'not-collected', 5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_collector_satisfactory_rating`
 --
 
@@ -392,34 +424,34 @@ CREATE TABLE `tbl_report` (
 --
 
 INSERT INTO `tbl_report` (`report_id`, `report_user_id`, `r_brgy`, `r_sitio`, `message`, `status`, `date_reported`, `report_m_id`, `report_b_id`, `r_proof`, `r_posted_proof`) VALUES
-(79, 94, 0, '', 'hindi regular na pag kulekta ng basura', 'rated', '2023-11-30', 1, 3, '../upload/images (14).jpeg', '2023-11-30 04:27:43'),
-(80, 97, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'done', '2023-12-04', 1, 6, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
-(81, 94, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'rated', '2023-12-04', 1, 3, NULL, NULL),
-(82, 100, 0, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
-(83, 100, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
-(84, 100, 0, '', 'hindi regular na pag kulekta ng basura', 'done', '2023-12-13', 1, 7, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
-(85, 100, 0, '', 'Others -Mabaho na ang amoy dahil aa dami ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
-(86, 100, 0, '', 'Others -Naglabas agad ng mga basura wala pang announce ng kolekta.', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
-(87, 95, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
-(88, 95, 0, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
-(89, 95, 0, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
-(90, 95, 0, '', 'hindi maayus na segregation', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
-(91, 95, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
-(92, 96, 0, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'done', '2023-12-13', 1, 5, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
-(93, 96, 0, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
-(94, 96, 0, '', 'Others -Ayaw kunin ang basura sobrang dami na nakatmabak', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
-(95, 96, 0, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
-(96, 96, 0, '', 'Others -Hindi sumusunod sa schedule ng kolekta', 'done', '2023-12-13', 1, 5, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
-(97, 97, 0, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
-(98, 97, 0, '', 'Others -Ginawang basurahan na ang ilog dito sa amin', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
-(99, 97, 0, '', 'Others -Ilog ginawa ng tambakan puro basura', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
-(100, 97, 0, '', 'hindi maayus na segregation', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
-(101, 99, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
-(102, 99, 0, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'done', '2023-12-13', 1, 14, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
-(103, 99, 0, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
-(104, 99, 0, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
-(105, 99, 0, '', 'Others -Nakakalat na ang basura sa tagal ng koleksyon.', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
-(106, 71, 3, 'km 19', 'hindi regular na pag kulekta ng basura', 'pending', '2023-12-23', 1, 5, NULL, NULL);
+(79, 94, 3, '', 'hindi regular na pag kulekta ng basura', 'rated', '2023-11-30', 1, 3, '../upload/images (14).jpeg', '2023-11-30 04:27:43'),
+(80, 97, 6, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'done', '2023-12-04', 1, 6, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
+(81, 94, 3, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'rated', '2023-12-04', 1, 3, NULL, NULL),
+(82, 100, 7, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
+(83, 100, 7, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
+(84, 100, 7, '', 'hindi regular na pag kulekta ng basura', 'done', '2023-12-13', 1, 7, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
+(85, 100, 7, '', 'Others -Mabaho na ang amoy dahil aa dami ng basura', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
+(86, 100, 7, '', 'Others -Naglabas agad ng mga basura wala pang announce ng kolekta.', 'false-complaint', '2023-12-13', 1, 7, NULL, NULL),
+(87, 95, 4, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
+(88, 95, 4, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
+(89, 95, 4, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
+(90, 95, 4, '', 'hindi maayus na segregation', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
+(91, 95, 4, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 4, NULL, NULL),
+(92, 96, 5, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'done', '2023-12-13', 1, 5, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
+(93, 96, 5, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
+(94, 96, 5, '', 'Others -Ayaw kunin ang basura sobrang dami na nakatmabak', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
+(95, 96, 5, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 5, NULL, NULL),
+(96, 96, 5, '', 'Others -Hindi sumusunod sa schedule ng kolekta', 'done', '2023-12-13', 1, 5, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
+(97, 97, 6, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
+(98, 97, 6, '', 'Others -Ginawang basurahan na ang ilog dito sa amin', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
+(99, 97, 6, '', 'Others -Ilog ginawa ng tambakan puro basura', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
+(100, 97, 6, '', 'hindi maayus na segregation', 'false-complaint', '2023-12-13', 1, 6, NULL, NULL),
+(101, 99, 14, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
+(102, 99, 14, '', 'kakulangan sa edukasyun tungkol sa pag-sasaayus ng basura', 'done', '2023-12-13', 1, 14, '../upload/images_(15).jpeg', '2023-12-13 08:37:37'),
+(103, 99, 14, '', 'hind sumusunod sa schedule ng pangungulekta ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
+(104, 99, 14, '', 'hindi regular na pag kulekta ng basura', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
+(105, 99, 14, '', 'Others -Nakakalat na ang basura sa tagal ng koleksyon.', 'false-complaint', '2023-12-13', 1, 14, NULL, NULL),
+(106, 71, 5, 'km 19', 'hindi regular na pag kulekta ng basura', 'pending', '2023-12-23', 1, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -667,9 +699,9 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `mname`, `lname`, `accnt_status`, `username`, `password`, `email`, `phone`, `user_type`, `photo`, `brgy`, `user_m_id`, `duty`) VALUES
 (4, 'Juan', 'A', 'Dela Cruz', 'active', 'admin', 'f865b53623b121fd34ee5426c792e5c33af8c227', 'mail.verifier2022@gmail.com', '09159459270', '1', '../upload/admin.png', NULL, 1, 0),
-(70, 'Michael', 'A', 'James', 'active', 'collector', 'e9b14f010c91507ddbdd32bd28911ba8a9f3d30f', 'ebacalso77@gmail.com', '09976093431', '3', '../upload/pngwing.com.png', 3, 1, 1),
+(70, 'Michael', 'A', 'James', 'active', 'collector', 'e9b14f010c91507ddbdd32bd28911ba8a9f3d30f', 'ebacalso77@gmail.com', '09976093431', '3', '../upload/pngwing.com.png', 5, 1, 1),
 (71, 'John', 'A', 'ken', 'active', 'resident1', 'da285a3093edf44c93434fd31810cbb516e20b96', 'edward.bacalso77@gmail.com', '09976093431', '2', '../upload/pngwing.com.png', 5, 1, 0),
-(88, 'Lebron', 'B.', 'James', 'active', 'collector01', '5ec62e6b693a7024b8d6301ce6f4ca5725bb14cb', 'lebronjames@gmail.com', '09876543210', '3', '../upload/images (5).jpeg', 4, 1, 0),
+(88, 'Lebron', 'B.', 'James', 'active', 'collector01', '5ec62e6b693a7024b8d6301ce6f4ca5725bb14cb', 'lebronjames@gmail.com', '09876543210', '3', '../upload/images (5).jpeg', 4, 1, 1),
 (89, 'Kobe', 'D.', 'Bryant', 'active', 'collector02', '585c270dde7ccf556103042dac4032b89670f7ca', 'kobebryant@gmail.com', '09876543210', '3', '../upload/images (6).jpeg', 5, 1, 1),
 (90, 'Jessica', 'M.', 'Soho', 'active', 'collector03', '2af76e1953ebc18bac4bfce1b43a15fca8b0b33d', 'jessicasoho@gmail.com', '09876543210', '3', '../upload/images (4).png', 6, 1, 0),
 (91, 'Oggie', 'C.', 'Diaz', 'active', 'collector04', 'e3b8dd467af00209a8380c3c8367a75f52a7a4bf', 'oggiediaz@gmail.com', '09876543210', '3', '../upload/images (2).png', 7, 1, 1),
@@ -742,6 +774,12 @@ ALTER TABLE `tbl_collection_completion_report`
   ADD PRIMARY KEY (`ccr_id`),
   ADD KEY `ccr_user_id` (`ccr_user_id`),
   ADD KEY `ccr_brgy` (`ccr_brgy`);
+
+--
+-- Indexes for table `tbl_collection_ratings`
+--
+ALTER TABLE `tbl_collection_ratings`
+  ADD PRIMARY KEY (`cr_id`);
 
 --
 -- Indexes for table `tbl_collector_satisfactory_rating`
@@ -855,6 +893,12 @@ ALTER TABLE `tbl_bulletin_viewer`
 --
 ALTER TABLE `tbl_collection_completion_report`
   MODIFY `ccr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `tbl_collection_ratings`
+--
+ALTER TABLE `tbl_collection_ratings`
+  MODIFY `cr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_collector_satisfactory_rating`
