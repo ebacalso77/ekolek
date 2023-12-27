@@ -665,7 +665,7 @@ GROUP BY
                 width: 615,
                 bars: 'vertical',
                 bar: { groupWidth: '50%' }, // Adjust the bar width as needed
-                legend: { position: 'none' },
+                legend: { position: 'bottom', textStyle: { fontSize: 14 } },
                 series: {
                     1: { color: 'green' } // Change the color of the bars to green
                 }

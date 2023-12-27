@@ -252,7 +252,7 @@ include "../connection.php";
                     <!-- Right side (size 4) -->
                     <div class="col-xl-4">
                         <div id="chart_div2" class="border border-secondary  rounded p-2 mb-2 shadow" >
-                            <canvas id="chart_div2" class="bg-gradient-primary"></canvas>
+                            <canvas id="chart_div2" ></canvas>
                         </div>
                         <div id="chart_div4" class="border border-secondary rounded p-2 mb-2 shadow ">
                             <canvas id="chart_div4"></canvas>
