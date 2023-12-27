@@ -52,25 +52,26 @@ include "../connection.php";
                             <!-- Total User -->
                             <div class="col-xl-3 col-md-6 mb-2">
                                 <a href="user.php" class="text-decoration-none">
-                                    <div class="card border-left-primary shadow h-70">
+                                    <div class="card border-secondary border-left-primary shadow h-70">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
                                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                        Users</div>
+                                                        Users
+                                                    </div>
                                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                         <?php
-                                                        $user=mysqli_query($con,"select * from tbl_user where user_type=2");
-                                                        if (mysqli_num_rows($user)>0){
+                                                        $user = mysqli_query($con, "select * from tbl_user where user_type=2");
+                                                        if (mysqli_num_rows($user) > 0) {
                                                             echo mysqli_num_rows($user);
-                                                        }else{
+                                                        } else {
                                                             echo "0";
                                                         }
                                                         ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-users fa-2x text-gray-300"></i>
+                                                    <i class="fas fa-users fa-2x text-blue-300"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -78,9 +79,9 @@ include "../connection.php";
                                 </a>
                             </div>
                             <!-- Collector  -->
-                            <div class="col-xl-3 col-md-6 mb-2">
+                            <div class="col-xl-3 col-md-6 mb-2 ">
                                 <a href="collector.php" class="text-decoration-none">
-                                    <div class="card border-left-warning shadow  h-70">
+                                    <div class="card border-secondary border-left-warning shadow  h-70">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
@@ -98,7 +99,7 @@ include "../connection.php";
                                                     </div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-truck fa-2x text-gray-300"></i>
+                                                    <i class="fas fa-truck fa-2x text-warning"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -106,9 +107,9 @@ include "../connection.php";
                                 </a>
                             </div>
                             <!-- Total complaint-->
-                            <div class="col-xl-3 col-md-6 mb-2">
+                            <div class="col-xl-3 col-md-6 mb-2 ">
                                 <a href="complaint.php" class="text-decoration-none" >
-                                    <div class="card border-left-success shadow  h-70">
+                                    <div class="card border-secondary border-left-success shadow  h-70">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
@@ -126,7 +127,7 @@ include "../connection.php";
                                                     </div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-chart-pie fa-2x text-gray-300"></i>
+                                                    <i class="fas fa-chart-pie fa-2x text-success"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -134,9 +135,9 @@ include "../connection.php";
                                 </a>
                             </div>
                             <!-- Total request-->
-                            <div class="col-xl-3 col-md-6 mb-2">
+                            <div class="col-xl-3 col-md-6 mb-2 ">
                                 <a href="request.php" class="text-decoration-none">
-                                    <div class="card border-left-info shadow  h-70">
+                                    <div class="card border-secondary border-left-info shadow  h-70">
                                         <div class="card-body">
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
@@ -155,17 +156,10 @@ include "../connection.php";
                                                                 ?>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <!--                                                    <div class="progress progress-sm mr-2">-->
-                                                            <!--                                                        <div class="progress-bar bg-info" role="progressbar"-->
-                                                            <!--                                                            style="width: --><?//=$r.'%'?><!--" aria-valuenow="--><?//=$r?><!--" aria-valuemin="0"-->
-                                                            <!--                                                            aria-valuemax="100"></div>-->
-                                                            <!--                                                    </div>-->
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                    <i class="fas fa-clipboard-list fa-2x text-info"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -173,14 +167,14 @@ include "../connection.php";
                                 </a>
                             </div>
                         </div>
-                        <div class="card p-0 mb-1">
-                            <div class="card-body" id="weekly_d">
+                        <div class="card p-0 mb-1 border-secondary shadow mb-2">
+                            <div class="card-body " id="weekly_d">
                                 <div id="chart_div8" style="height: 300px;"></div>
                                 <a id="weekly" href="add-weekly-total-collected-waste.php"  class="btn btn-primary btn-sm" ><i class="fa fa-eye mx-2"></i>Weekly Total Collected Waste per Brgy </a>
                             </div>
                         </div>
-                        <div class="card p-0 mb-1">
-                            <div class="card-body">
+                        <div class="card p-0 mb-1 border-secondary shadow mb-2">
+                            <div class="card-body border-dark">
                                 <div class="text-center">
                                 <p class="mt-4">Select Date Range:</p>
                                 <form action="" method="post">
@@ -249,7 +243,7 @@ include "../connection.php";
                                 </div>
                             </div>
                         </div>
-                        <div class="card p-0 mb-1">
+                        <div class="card p-0 mb-1 border-secondary shadow">
                             <div class="card-body">
                                 <div id="chart_div10" style="height: 300px;"></div>
                             </div>
@@ -257,12 +251,24 @@ include "../connection.php";
                     </div>
                     <!-- Right side (size 4) -->
                     <div class="col-xl-4">
-                        <span id="chart_div2"></span>
-                        <span id="chart_div4"></span>
-                        <span id="chart_div3"></span>
-                        <span id="chart_div7"></span>
-                        <span id="chart_div1"></span>
-                        <span id="chart_div5"></span>
+                        <div id="chart_div2" class="border border-secondary  rounded p-2 mb-2 shadow" >
+                            <canvas id="chart_div2" class="bg-gradient-primary"></canvas>
+                        </div>
+                        <div id="chart_div4" class="border border-secondary rounded p-2 mb-2 shadow ">
+                            <canvas id="chart_div4"></canvas>
+                        </div>
+                        <div id="chart_div3" class="border border-secondary rounded p-2 mb-2 shadow">
+                            <canvas id="chart_div3"></canvas>
+                        </div>
+                        <div id="chart_div7" class="border border-secondary rounded p-2 mb-2 shadow">
+                            <canvas id="chart_div7"></canvas>
+                        </div>
+                        <div id="chart_div1" class="border border-secondary rounded p-2 mb-2 shadow">
+                            <canvas id="chart_div1"></canvas>
+                        </div>
+                        <div id="chart_div5" class="border border-secondary rounded p-2 shadow">
+                            <canvas id="chart_div5"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
